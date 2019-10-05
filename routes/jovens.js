@@ -99,18 +99,22 @@ router.post("/cadastro", (req, res) => {
             ala
           });
         } else {
-          const novoJovem = new Jovem({
-            nome,
-            telefone,
-            companhia,
-            idade,
-            sexo,
-            cmis,
-            estaca,
-            ala
-          });
 
-          novoJovem
+          if(!companhia){
+            companhia = "529f093e591f90ec628b4568";
+
+            const novoJovem = new Jovem({
+              nome,
+              telefone,
+              idade,
+              sexo,
+              companhia,
+              cmis,
+              estaca,
+              ala
+            }); 
+
+            novoJovem
             .save()
             .then(jovemCreated => {
               req.flash("success_msg", "Jovem cadastrado");
@@ -119,6 +123,36 @@ router.post("/cadastro", (req, res) => {
             .catch(err => {
               console.log(err);
             });
+            
+          }else{
+            const novoJovem = new Jovem({
+              nome,
+              telefone,
+              companhia,
+              idade,
+              sexo,
+              cmis,
+              estaca,
+              ala
+            });
+
+            novoJovem
+            .save()
+            .then(jovemCreated => {
+              req.flash("success_msg", "Jovem cadastrado");
+              res.redirect("/dashboard/jovens/cadastro");
+            })
+            .catch(err => {
+              console.log(err);
+            });
+            
+          }
+
+
+
+         
+
+          
         }
       })
       .catch(err => {
@@ -149,5 +183,49 @@ router.get("/editar/:id", (req, res) => {
       res.redirect("/admin/postagens");
     });
 });
+
+//rota post de editar jovem
+router.post("/editar", (req,res) => {
+  console.log(req.body)
+  const {
+    id,
+    nome,
+    telefone,
+    sexo,
+    estaca,
+    ala,
+    cmis,
+    idade,
+    companhia
+  } = req.body;
+  let errors = [];
+
+  Jovem.findOne({_id: id}).then((jovem) => {
+
+      jovem.nome = nome,
+      jovem.telefone = telefone,
+      jovem.sexo = sexo,
+      jovem.estaca = estaca,
+      jovem.ala = ala,
+      jovem.cmis = cmis,
+      jovem.idade = idade,
+      jovem.companhia = companhia
+
+      jovem.save().then(() => {
+        req.flash("success_msg", "Jovem Editado");
+        res.redirect("/dashboard/jovens/");
+      }).catch((erro) => {
+        errors.push({ msg: "A operação encontrou um erro na edição" });
+        console.log("erro de edição da postagem: console: " + erro)
+        res.redirect("/dashboard/jovens")
+      })
+
+  }).catch((erro) => {
+    errors.push({ msg: "A operação possui erros e foi finalizada"});
+      console.log("erro de edição da postagem: console: " + erro)
+      res.redirect("/dashboard/jovens/")
+  })
+})
+
 
 module.exports = router;
