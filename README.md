@@ -2,13 +2,14 @@
 
 ---
 
-this repository intents to be a boilerplate for authentication, registration and authorization using local strategy of passport.
+this is a repo for a non oficial page, and a system to manage youth of the church during the event meetup.
 
 make sure you have all dependencies installed using the command:
 
 #### > npm i
 
-for this project was used node.js , mongodb and ejs.
+for this project was used node.js , mongodb and handlebars as a view engine.
 
-feel free to use this repo too.
-i only want you to consider follow me if this helped you.
+we are able to accept better ideas, feel free to help us.
+
+
