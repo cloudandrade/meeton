@@ -1,0 +1,90 @@
+{{!-- <!--register-->
+<div class="login-page">
+    <h1>Cadastro de Usuário</h1>
+    {{>messages}}
+
+
+    <div class="form">
+        <form action="/users/register" class="login-form" method="POST">
+
+
+            <label for="name" class="labels">Nome Completo:</label>
+            <input type="name" id="name" name="name" class="form-control" placeholder="Jhon Doe Almeida Freitas" />
+
+
+            <label for="email" class="labels">Email:</label>
+            <input type="email" id="email" name="email" class="form-control"
+                placeholder="jhondoenutts@myemail.net.br" />
+
+
+            <label for="password" class="labels">Senha:</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="************" />
+
+
+            <label for="password2" class="labels">Confirmação de Senha:</label>
+            <input type="password" id="password2" name="password2" class="form-control" placeholder="************" />
+
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+
+        <p class="message">voltar ao painel <a href="/dashboard">DashBoard</a></p>
+
+    </div>
+</div> --}}
+
+
+
+<body class="bg-gradient-primary">
+
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+          {{>messages}}
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block">
+              <img src="/img/ufo.jpg" width="500px" height="600px">
+          </div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Criar uma conta de Logística</h1>
+              </div>
+              <form action="/users/register" method="POST" class="user">
+                <div class="form-group">
+                  
+                    <input type="text" id="name" name="name" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome Completo">
+                  
+   
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" name="email" class="form-control form-control-user"  placeholder="Endereço de E-mail">
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="password" id="password" name="password" class="form-control form-control-user" placeholder="Senha">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="password" id="password2" name="password2" class="form-control form-control-user" placeholder="Confirmação de Senha">
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-user btn-block">Cadastrar</button>              
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" href="/dashboard">Retornar ao Dashboard</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+

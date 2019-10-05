@@ -1,0 +1,105 @@
+<head>
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body>
+
+{{>dashboard}}
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content fluid">
+        {{>dashboard-top}}
+  
+  <div class="container-fluid">
+
+<!--Conteúdo da página ficará aqui-->
+
+ <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          
+          <div class="col-lg-12">
+            <div class="p-4">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Cadastro de Consultor</h1>
+              </div>
+              <form action="#" method="POST" class="user">
+                <div class="form-group">
+                <div class="row">
+                  <input type="text" name="nome" id="nome" class="form-control form-ajust30 form-control-user" placeholder="Nome Completo">
+         
+                  <input type="text" name="telefone" id="telefone" class="form-control form-ajust30 form-control-user" placeholder="Telefone">
+
+<label>Companhia:</label>
+                  <select name="companhia" class="custom-select" required>
+                  {{#each companhias}}
+                  <option value="{{_id}}">{{nome}}</option>
+                  {{else}}
+                  <option value="0">Nenhuma categoria registrada</option>
+                  {{/each}}
+              </select>
+                </div>
+                </div>
+              
+                
+                
+                   <div class="form-group">
+                    <div class="row ml-2">  
+                    <label class="mt-3">Estaca:</label>
+                    <select name="estaca" class="select" id="estaca">
+                        <option value="Estaca Salvador" class="si" selected>Estaca Salvador</option>
+                        <option value="Estaca Salvador Norte" class="si">Estaca Salvador Norte</option>
+                        <option value="Estaca Imbuí" class="si">Estaca Imbuí</option>
+                        <option value="Estaca Liberdade" class="si">Estaca Liberdade</option>
+                    </select>
+                 
+                    <input type="text" name="ala" id="" class="form-control form-ajust30 form-control-user" placeholder="Ala">
+                  <div class="row ml-4 mt-3">
+                  <label>Sexo:</label>
+                  <input type="radio"  class="ml-1 mr-1 mt-1" name="sexo" value="M"> Masculino<br>
+                  <input type="radio" class="ml-1 mr-1 mt-1" name="sexo" value="F"> Feminino<br>
+                  </div>
+                  </div>
+                   </div>
+                
+               
+            
+            <button type="submit" id="" class=" btn btn-custom  btn-primary mt-4">Cadastrar Consultor</button>
+                
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+<!--FIM do Conteúdo da página-->
+
+        </div>    
+      </div>
+    </div>
+
+{{>dashboard-bottom}}
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="/js/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+</body>

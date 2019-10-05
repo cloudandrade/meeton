@@ -1,0 +1,123 @@
+{{>dashboard}}
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content fluid">
+        {{>dashboard-top}}
+  
+  <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Visão Geral</h1>
+          </div>
+
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-2">Jovens</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{jovemcont}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-2">Consultores</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{consultorcont}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-2">Companhias</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{companhiacont}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-flag fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-2">Integrantes da Logística</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{userscont}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-people-carry fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-12">
+              <!-- Basic Card Example -->
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Bem Vindo</h6>
+                </div>
+                <div class="card-body">
+                 Este sistema ainda está em desenvolvimento e não possui qualquer tipo de rentabilidade, feito por uma equipe qualificada que está prestando serviços voluntários, qualquer bug, erro, ou falha no sistema, deve ser levada em consideração o curto período e esforço desenvolvido pelos demais.
+                 desde já agradeço pelo apoio de todos.
+
+                </div>
+              </div>
+
+                        <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Avisos:</h6>
+                </div>
+                <div class="card-body">
+               Esta plataforma tem o intuito de crescer a cada ano, porém deverá ser utilizada apenas por pessoal autorizado dentro dos prazos designados para o MeetUp e somente para as funções designadas.
+
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+    
+    
+      </div>
+    </div>
+
+{{>dashboard-bottom}}
