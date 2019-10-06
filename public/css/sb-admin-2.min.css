@@ -8,26 +8,31 @@
      width: 48% !important;
      margin-left: 10px;
     
+
  }
 
   .form-ajust30{
      width: 30% !important;
      margin-left: 10px;
+     border-radius: 20px;
  }
 
   .form-ajust20{
      width: 20% !important;
      margin-left: 10px;
+     border-radius: 20px;
  }
 
    .form-ajust15{
      width: 15% !important;
      margin-left: 10px;
+     border-radius: 20px;
  }
 
   .form-ajust6{
      width: 8% !important;
      margin-left: 10px;
+     border-radius: 20px;
  }
 
  .select{
