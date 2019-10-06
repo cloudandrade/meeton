@@ -36,44 +36,43 @@
                  <input type="hidden" value="{{jovem._id}}" name="id">
                 <div class="form-group">
                   <div class="row ">
-                  <input type="text" name="nome" id="nome"  value="{{jovem.nome}}" class="form-control form-ajust30 form-control-user" placeholder="Nome Completo*">
+                  <input type="text" name="nome" value="{{jovem.nome}}" id="nome" class="form-control form-ajust30 grid-3 form-control-user" placeholder="Nome Completo*">
+                  <input type="text" name="telefone" value="{{jovem.telefone}}" id="telefone" class="form-control form-ajust15 grid-2 form-control-user" placeholder="Telefone">
+                   <input type="text" name="cmis" id="cmis" value="{{jovem.cmis}}" class="form-control form-ajust20 grid-2 form-control-user" placeholder="cmis">
+                   <input type="text" name="ala" id="" value="{{jovem.ala}}" class="form-control form-ajust20 grid-2 form-control-user" placeholder="Ala">
                 
-                <label class="mt-3 ml-2">Idade*:</label>
-                  <input type="number" name="idade" id="idade" value="{{jovem.idade}}" class="form-control form-ajust6 form-control-user" placeholder="">
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <div class="row">
-                   <input type="text" name="cmis" id="cmis" value="{{jovem.cmis}}" class="form-control form-ajust20 form-control-user" placeholder="cmis">
-              
-                  <input type="text" name="telefone" id="telefone"  value="{{jovem.telefone}}" class="form-control form-ajust15 form-control-user" placeholder="Telefone*">
+                <div class="form-group mb-5">
+                  <div class="row mb-2">
+                     <label class="label grid-4">Idade*:</label>
+                     <label class="label grid-4">Estaca:*</label>
+                     <label class="label grid-8">Sexo*:</label>
+                     <label class="label grid-5-2">Companhia:</label>
+
                   </div>
-                </div>
-                <div class="form-group">
                   <div class="row">
-                  <label class="label ml-3 ">Estaca:*</label>
-                    <select class="select" name="estaca" id="estaca">
-                        <option value="Estaca Salvador" selected>Estaca Salvador</option>
+                   
+                  <input type="number" name="idade" id="idade" value="{{jovem.idade}}" class="form-control form-ajust6 grid-3 form-control-user" placeholder="">
+                  
+                    <select class="select grid-3" name="estaca" id="estaca">
+                        <option value="Estaca Salvador">Estaca Salvador</option>
                         <option value="Estaca Salvador Norte">Estaca Salvador Norte</option>
                         <option value="Estaca Imbuí">Estaca Imbuí</option>
                         <option value="Estaca Liberdade">Estaca Liberdade</option>
                     </select>
               
-                  <div>
-                  <label class="label">Sexo*:</label>
-                  <input type="radio" name="sexo" value="M"> Masculino
-                  <input type="radio" name="sexo" value="F"> Feminino
+                  <div class="grid-3 mt-3">
+                       <input type="radio" name="sexo" value="M" checked="checked"> Masculino
+                        <input type="radio" class="ml-2" name="sexo" value="F"> Feminino
                   </div>
-               
-                  <input type="text" name="ala" id="" class="form-control form-ajust20 form-control-user" placeholder="Ala" value="{{jovem.ala}}">
-
-                  <label>Companhia:</label>
-                  <select name="companhia" class="custom-select" required>
+                  
+                  <select name="companhia" class="select grid-3" required>
                   {{#each companhias}}
                   <option value="{{_id}}">{{nome}}</option>
                   {{else}}
-                  <option>Nenhuma companhia registrada</option>
+                  <option value="0">Nenhuma categoria registrada</option>
                   {{/each}}
               </select>
                 </div>
