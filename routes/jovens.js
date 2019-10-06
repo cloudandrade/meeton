@@ -216,13 +216,13 @@ router.post("/editar", (req,res) => {
         res.redirect("/dashboard/jovens/");
       }).catch((erro) => {
         errors.push({ msg: "A operação encontrou um erro na edição" });
-        console.log("erro de edição da postagem: console: " + erro)
+        console.log("erro de edição da jovem: console: " + erro)
         res.redirect("/dashboard/jovens")
       })
 
   }).catch((erro) => {
     errors.push({ msg: "A operação possui erros e foi finalizada"});
-      console.log("erro de edição da postagem: console: " + erro)
+      console.log("erro de edição da jovem: console: " + erro)
       res.redirect("/dashboard/jovens/")
   })
 })

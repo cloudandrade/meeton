@@ -66,14 +66,14 @@
                   <input type="radio" name="sexo" value="F"> Feminino
                   </div>
                
-                  <input type="text" name="ala" id="" class="form-control form-ajust20 form-control-user" placeholder="Ala">
+                  <input type="text" name="ala" id="" class="form-control form-ajust20 form-control-user" placeholder="Ala" value="{{jovem.ala}}">
 
                   <label>Companhia:</label>
                   <select name="companhia" class="custom-select" required>
                   {{#each companhias}}
                   <option value="{{_id}}">{{nome}}</option>
                   {{else}}
-                  <option value="0">Nenhuma categoria registrada</option>
+                  <option>Nenhuma companhia registrada</option>
                   {{/each}}
               </select>
                 </div>
