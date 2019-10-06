@@ -52,9 +52,15 @@
 
  .label{
  margin-top: 15px;
-    margin-left: 3px;
-    margin-right: 2px;
+   
+    
 }
+
+.label-2{
+    margin-top: 15px;
+       margin-left: 12%;
+      
+   }
 
 
 .btn-add{
@@ -75,4 +81,24 @@
    display: inline-block;
    padding: .375rem .45rem;
    cursor: pointer;
+}
+
+.grid-3{
+margin-left: 5%;
+
+}.grid-2{
+margin-left: 1%;
+}.grid-4{
+margin-left:7%;
+}.grid-5{
+margin-left: 10%;
+}
+.grid-5-2{
+    margin-left: 13%;
+}.grid-6{
+    margin-left: 15%;
+}.grid-7{
+    margin-left: 20%;
+}.grid-8{
+    margin-left: 29%;
 }
