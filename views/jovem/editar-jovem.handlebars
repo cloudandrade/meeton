@@ -32,7 +32,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Edição de dados do Jovem</h1>
               </div>
-              <form action="#" method="POST" class="user">
+              <form action="/dashboard/jovens/editar" method="POST">
                  <input type="hidden" value="{{jovem._id}}" name="id">
                 <div class="form-group">
                   <div class="row ">
@@ -66,19 +66,19 @@
                   <input type="radio" name="sexo" value="F"> Feminino
                   </div>
                
-                  <input type="text" name="ala" id="" class="form-control form-ajust20 form-control-user" placeholder="Ala">
+                  <input type="text" name="ala" id="" class="form-control form-ajust20 form-control-user" placeholder="Ala" value="{{jovem.ala}}">
 
                   <label>Companhia:</label>
                   <select name="companhia" class="custom-select" required>
                   {{#each companhias}}
                   <option value="{{_id}}">{{nome}}</option>
                   {{else}}
-                  <option value="0">Nenhuma categoria registrada</option>
+                  <option>Nenhuma companhia registrada</option>
                   {{/each}}
               </select>
                 </div>
             </div>
-            <button type="submit" id="" class=" btn btn-custom  btn-primary ">Editar</button>
+            <button type="submit" class=" btn btn-custom  btn-primary ">Editar</button>
                 
               </form>
               
