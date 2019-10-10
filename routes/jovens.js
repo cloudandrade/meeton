@@ -28,16 +28,32 @@ router.get("/estaca", (req, res) => {
 });
 
 router.post("/busca", (req, res) => {
-  const busca = req.body;
+  let busca = req.body.busca;
 
-  Jovem.find({ nome: busca })
-    .populate("companhia")
-    .then(jovens => {
-      res.render("jovem/lista-jovens", { jovens: jovens });
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  //validação se busca está vazio
+  if (!busca || busca === "" || busca == undefined) {
+    //se busca for vazio basta recarrecar a página novamente
+    Jovem.find()
+      .sort({ idade: "asc" })
+      .populate("companhia")
+      .then(jovens => {
+        res.render("jovem/lista-jovens", { jovens: jovens });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  } else {
+    //busca = "/" + busca + "/i";
+    //se não for vazio será uma procura de alguma pessoa
+    Jovem.find({ nome: { $regex: busca, $options: "i" } })
+      .populate("companhia")
+      .then(jovens => {
+        res.render("jovem/lista-jovens", { jovens: jovens });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 });
 
 //cadastro de jovens
