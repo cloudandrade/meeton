@@ -13,6 +13,7 @@ const Companhia = mongoose.model("companhias");
 //listagem de jovens
 router.get("/", (req, res) => {
   Jovem.find()
+    .sort({ idade: "asc" })
     .populate("companhia")
     .then(jovens => {
       res.render("jovem/lista-jovens", { jovens: jovens });
