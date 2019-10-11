@@ -54,17 +54,17 @@ app.use(express.static(path.join(__dirname, "public"))); //fala pra o app que to
 app.use("/", require("./routes/index"));
 
 //MONGO ONLINE
-/*  const db = require("./config/keys").MongoURI;
+ const db = require("./config/keys").MongoURI;
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("AtlasDb Connected..."))
   .catch(err => {
     console.log("Falha ao conectar ao AtlasDb");
     console.log(err);
-  });  */
+  }); 
 
 //MONGOOSE
-mongoose.Promise = global.Promise;
+/* mongoose.Promise = global.Promise;
 mongoose
   .connect("mongodb://localhost/passport", { useNewUrlParser: true })
   .then(() => {
@@ -74,7 +74,7 @@ mongoose
     console.log(
       "houve um problema ao se conectar ao banco de dados, erro: " + erro
     );
-  });
+  }); */
 
 //SERVER
 app.listen(
