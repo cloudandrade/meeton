@@ -21,9 +21,22 @@
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
+              
             <div class="card-header py-3">
-          
-              <h6 class="m-0 font-weight-bold text-primary">Jovens</h6>
+          <div class="row">
+              <h6 class="m-0 font-weight-bold text-primary mt-2 ml-3">Jovens</h6>
+              <!--Botão de pesquisa form-->
+                <form action="/dashboard/jovens/busca" method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3  my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" id="busca" name="busca" class="form-control bg-light border-0 small" placeholder="Buscar por..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+  </div>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -82,4 +95,33 @@
   <script src="/js/jquery.easing.min.js"></script>
   <!-- Custom scripts for all pages-->
   <script src="/js/sb-admin-2.min.js"></script>
+
+<!--Função de busca incompleta-->
+  <script>
+    function myFunction() {
+      let busca = document.getElementById('search').value
+const URL_TO_FETCH = `http://localhost:5000/dashboard/jovens`; 
+
+fetch(URL_TO_FETCH, { 
+  method: 'GET' // opcional
+})
+.then(function(response) { 
+   console.log(response)
+  }
+
+ 
+
+console.log(search)
+ $('tbody').empty();
+    result.forEach(function(item){
+       $('tbody').append('<tr><th>'+s+'</th></tr>');
+    })
+
+
+
+})
+.catch(function(err) { console.error(err); });
+    }
+</script>
+<!--Função de busca-->
 </body>

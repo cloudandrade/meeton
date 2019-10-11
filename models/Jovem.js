@@ -21,7 +21,7 @@ const Jovem = new Schema({
     type: String
   },
   cmis: {
-    type: Number
+    type: String
   },
   sexo: {
     type: String,
