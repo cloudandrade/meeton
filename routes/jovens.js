@@ -1,5 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const ObjectId = require("mongoose").Schema.ObjectId
+
+
 
 const router = express.Router();
 
@@ -11,12 +14,90 @@ require("../models/Companhia");
 const Companhia = mongoose.model("companhias");
 
 //listagem de jovens
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+
+  let retorno = [];
+  let naodesignados = []
+ 
+ /*  let engenheiros = await Jovem.find({companhia:"5da09fd721f4dc0004748484"})
+ .then(jovens => {
+   if(jovens){
+    retorno.push(jovens) 
+   }
+    
+  }).catch(err => {
+    console.log(err)
+  }) */
+
+  //nao designados
+
+
+
+ 
+  let jovem = Jovem.find({companhia : "5d9a730a7d6c050004d6572e"}).then(jovem => {
+    console.log(jovem)
+  }).catch(err => {
+    console.log(err)
+  })
+  
+  
+ 
+ 
+ 
+
+
+
+
   Jovem.find()
     .sort({ idade: "asc" })
     .populate("companhia")
-    .then(jovens => {
-      res.render("jovem/lista-jovens", { jovens: jovens });
+    .then(async jovens => {
+
+    
+      
+
+/* 
+      let teste = await Jovem.find({companhia: ObjectId("507c35dd8fada716c89d0013")})
+    let naodesignado = await Jovem.count()
+    let jedis = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let sputnik = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let autobots = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let flinstones = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let fenix = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let jaspion = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let transformers = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let robocop = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let mortalidade = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let skywalker = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let padawans = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let atari = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let thundercats = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let engenheiros = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let caverna = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let solocorazon = await Jovem.countDocuments({companhia: "5d9a730a7d6c050004d6572e"})
+    let orionte = await Jovem.count({companhia: "5d9a730a7d6c050004d6572e"},function(count) { } )
+  console.dir(teste) */
+      res.render("jovem/lista-jovens", { 
+        jovens: jovens,
+       /*  naodesignado: naodesignado,
+        jedis:jedis,
+        sputnik: sputnik,
+        autobots:autobots,
+        flinstones: flinstones,
+        fenix:fenix,
+        jaspion:jaspion,
+        transformers:transformers,
+        robocop:robocop,
+        mortalidade: mortalidade,
+        skywalker: skywalker,
+        padawans: padawans,
+        atari: atari,
+        thundercats: thundercats,
+        engenheiros: engenheiros,
+        caverna: caverna,
+        solocorazon: solocorazon,
+        orionte: orionte */
+       });
     })
     .catch(err => {
       console.log(err);
@@ -70,6 +151,8 @@ router.get("/cadastro", (req, res) => {
 
 //tratativa de cadastro de jovem
 router.post("/cadastro", (req, res) => {
+
+
   const {
     nome,
     telefone,
@@ -81,6 +164,11 @@ router.post("/cadastro", (req, res) => {
     companhia
   } = req.body;
   let errors = [];
+
+  nome = nome.toUpperCase()
+  estaca = estaca.toUpperCase()
+  ala = ala.toUpperCase()
+  
 
   //check required fields
   if (!nome || !sexo || !idade || !estaca) {
